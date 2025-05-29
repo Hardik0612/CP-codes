@@ -1,0 +1,72 @@
+/*   बुद्धिहीन तनु जानिके, सुमिरौं पवन-कुमार। 
+     बल बुद्धि विद्या देहु मोहि, हरहु कलेश विकार।। */
+
+#include <bits/stdc++.h>
+using namespace std;
+
+#define ll long long
+#define vi vector<int>
+#define vl vector<long long>
+#define vpi vector<pair<int,int>>
+#define vpl vector<pair<ll, ll>>
+#define vs vector<string>
+#define nl endl
+#define pe(x) cout << (x) << '\n'
+#define py() cout << "YES\n"
+#define pn() cout << "NO\n"
+#define p(x) cout << (x) << " ";
+#define f(i,n) for(int i=0;i<n;++i)
+#define ip(a,n) for(int i=0;i<n;++i)cin >> a[i];
+#define op(a,n) for(int i=0;i<n;++i) cout<< a[i]<<" "; cout<<'\n';
+#define all(a) a.begin(),a.end()
+#define takei(n) int n; cin >> n;
+#define takell(n) ll n; cin >> n;
+#define takes(s) string s; cin >>s;
+#define pb(x) push_back(x);
+
+ll gcd(ll a, ll b) {if (b == 0) return a; return gcd(b, a % b); }
+
+const ll mod = 1e9 + 7;
+
+bool cmp(const pair<ll, ll> &a, const pair<ll, ll> &b) {
+    return a.first > b.first;
+}
+
+
+//---------solver function----------
+
+void solve() 
+{
+   int n,k;
+   cin >> n >> k;
+   unordered_map<char,int>mp;
+   takes(s);
+   f(i,n)
+   {
+    mp[s[i]]++;
+   }
+int odd = 0;
+for(auto x : mp){
+    if((x.second)&1) odd+=1;
+}
+
+if(odd > k+1) pn();
+else py();
+
+
+}
+
+
+
+//---------------main function-----------
+int main()
+{
+   takei(t);
+   while(t--)
+   {
+    solve();
+        
+    }
+}
+
+/*   by  Hardik Singh aka ~</BLWxHardikk>   */
