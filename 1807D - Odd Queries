@@ -1,0 +1,86 @@
+/*   बुद्धिहीन तनु जानिके, सुमिरौं पवन-कुमार। 
+     बल बुद्धि विद्या देहु मोहि, हरहु कलेश विकार।। */
+
+#include <bits/stdc++.h>
+using namespace std;
+
+#define ll long long
+#define vi vector<int>
+#define vl vector<long long>
+#define vpi vector<pair<int,int>>
+#define vpl vector<pair<ll, ll>>
+#define vs vector<string>
+#define nl endl
+#define pe(x) cout << (x) << '\n'
+#define py() cout << "YES\n"
+#define pn() cout << "NO\n"
+#define p(x) cout << (x) << " ";
+#define f(i,n) for(int i=0;i<n;++i)
+#define ip(a,n) for(int i=0;i<n;++i)cin >> a[i];
+#define op(a,n) for(int i=0;i<n;++i) cout<< a[i]<<" "; cout<<'\n';
+#define all(a) a.begin(),a.end()
+#define takei(n) int n; cin >> n;
+#define takell(n) ll n; cin >> n;
+#define takes(s) string s; cin >>s;
+#define pb(x) push_back(x);
+
+ll gcd(ll a, ll b) {if (b == 0) return a; return gcd(b, a % b); }
+
+const ll mod = 1e9 + 7;
+
+bool cmp(const pair<ll, ll> &a, const pair<ll, ll> &b) {
+    return a.first > b.first;
+}
+
+
+//---------solver function----------
+
+void solve(vi arr,int n) 
+{
+   int l,r,k;
+   cin >> l >> r >> k;
+   int replace = (r-l+1)*k;
+   int sum = 0;
+  for(int i=0;i<=(l-2);++i) sum+=arr[i];
+
+    for(int i=r;i<n;++i) sum+=arr[i];
+   sum+=replace;
+   if(sum&1) py();
+   else pn();
+
+
+
+
+}
+
+
+
+//---------------main function-----------
+int main()
+{
+   takei(t);
+   while(t--)
+   {
+     int n , q;
+     cin >> n >> q;
+     vi arr(n);
+     ip(arr,n);
+    vector<ll>prefix(n+1,0);
+    for(int i=0;i<n;++i){
+        prefix[i+1] = prefix[i] + arr[i];
+    }
+
+    ll total = prefix[n];
+    while(q--){
+        int l,r,k;
+        cin >> l >> r >> k;
+
+        int remove = prefix[r] - prefix[l-1];
+        ll news  = total - remove + (r-l+1)*k;
+        if(news&1) py();
+        else pn();
+    }
+    }
+}
+
+/*   by  Hardik Singh aka ~</BLWxHardikk>   */
